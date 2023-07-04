@@ -1,9 +1,11 @@
 import React from 'react'
-import Home from './home'
+import Navbar from './navbar'
+import Navmenu from './navmenu'
 function Page() {
   return (
     <div>
-      <Home/>
+      <Navbar/>
+      <Navmenu/>
     </div>
   )
 }
