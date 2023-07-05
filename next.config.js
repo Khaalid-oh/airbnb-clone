@@ -1,6 +1,20 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  
-}
 
-module.exports = nextConfig
+const nextConfig = {
+  images: {
+    domains: ['images.airbnb.com'],
+  },
+};
+
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.airbnb.com",
+        port: "",
+        pathname: "/**",
+      }
+    ],
+  },
+};
