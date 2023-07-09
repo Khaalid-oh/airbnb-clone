@@ -5,11 +5,10 @@ import Total from './total'
 import Slider from './slider'
 function Page() {
   return (
-    <div className='flex flex-col items-center justify-center bg-white'>
-      {/* <Navbar/> */}
-      <Navmenu/>
-      {/* <Total/> */}
-      {/* <Slider/> */}
+    <div className='flex flex-col items-center justify-start bg-white h-screen'>
+      <Navbar/>
+      {/* <Navmenu/> */}
+      <Total/>
     </div>
   )
 }
