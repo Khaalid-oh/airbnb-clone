@@ -18,7 +18,9 @@ import Lakefront from "../../public/images/Lakefront.png";
 import Mansions from "../../public/images/Mansions.png";
 import Amazingg from "../../public/images/Amazing-pools.png";
 import Luxe from "../../public/images/Luxe.png";
-import Filters from "../../public/images/Filters.png";
+import { IoIosArrowBack } from "react-icons/io"
+import { IoIosArrowForward } from "react-icons/io";
+//IoIosArrowForward
 
 const navMenu = [
   { icons: Amazing, title: "Amazing views" },
@@ -33,37 +35,36 @@ const navMenu = [
   { icons: Amazingg, title: "Amazing pools" },
   { icons: Luxe, title: "Luxe" },
 ];
-import { AiOutlineRight } from "react-icons/ai";
+
 function Navmenu() {
   const swiperRef = useRef<SwiperType>();
   return (
-    <div className="flex w-screen mx-auto p-4 items-center">
+    <div className="flex items-center justify-center w-full p-4">
       <button
         onClick={() => swiperRef.current?.slidePrev()}
-        className="w-8 h-8 bg-blue-600 text-white  mr-4  "
+        className="flex items-center justify-center w-7 h-7 rounded-full border-[1px]"
       >
-        P
+        <IoIosArrowBack />
       </button>
       <Swiper
-        spaceBetween={5}
-        slidesPerView={8}
+        spaceBetween={0}
+        slidesPerView={11}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
         modules={[Navigation]}
-        className="flex items-center justify-evenly mx-auto  w-full"
+        className="flex items-center justify-center mx-auto w-full"
       >
         {navMenu.map((apartment, i) => (
-          <SwiperSlide
-            key={i}
-            className="flex flex-col items-center justify-center p-1"
-          >
-            <p className="text-sm mb-1 text-black">{apartment.title}</p>
-            <Image
-              src={apartment?.icons}
-              alt="apartment"
-              className="h-5 w-5 items-center justify-center"
-            />
+          <SwiperSlide key={i} className="flex items-center justify-center">
+            <div className="flex flex-col w-24 justify-center items-center">
+              <Image
+                src={apartment?.icons}
+                alt="apartment"
+                className="flex h-6 w-6 items-center justify-center my-2"
+              />
+              <p className="text-xs text-black">{apartment.title}</p>
+            </div>
           </SwiperSlide>
         ))}
         {/* <div className="flex items-center justify-center h-7 w-7 rounded-full border-2">
@@ -77,9 +78,9 @@ function Navmenu() {
 
       <button
         onClick={() => swiperRef.current?.slideNext()}
-        className="w-8 h-8 bg-blue-600 text-white ml-4"
+        className="flex items-center justify-center w-7 h-7 rounded-full border-[1px] "
       >
-        N
+        <IoIosArrowForward />
       </button>
     </div>
   );

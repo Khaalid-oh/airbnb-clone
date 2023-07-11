@@ -7,7 +7,7 @@ function Page() {
   return (
     <div className='flex flex-col items-center justify-start bg-white h-screen'>
       <Navbar/>
-      {/* <Navmenu/> */}
+      <Navmenu/>
       <Total/>
     </div>
   )
