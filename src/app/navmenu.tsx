@@ -67,13 +67,6 @@ function Navmenu() {
             </div>
           </SwiperSlide>
         ))}
-        {/* <div className="flex items-center justify-center h-7 w-7 rounded-full border-2">
-        <AiOutlineRight className="" />
-        </div>
-        <div className="flex p-3 border-2 rounded-lg items-center gap-2">
-        <Image src={Filters} alt="Filters" className="h-4 w-4" />
-        <p>Filters</p>
-      </div> */}
       </Swiper>
 
       <button

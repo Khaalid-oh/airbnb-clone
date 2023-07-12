@@ -11,7 +11,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "assets.airbnb.com",
+        hostname: "a0.muscache.com",
         port: "",
         pathname: "/**",
       }

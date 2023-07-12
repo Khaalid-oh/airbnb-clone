@@ -7,6 +7,8 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
+import { FiHeart } from "react-icons/fi";
+
 
 const cardDetails = [
   {
@@ -149,32 +151,98 @@ const cardDetails = [
     total: 306,
     rating: 4.88,
   },
+  {
+    image:
+      "https://a0.muscache.com/im/pictures/2e59c7d2-3766-42cb-ba86-9958cbe307bc.jpg?im_w=720",
+    description: "Kelong, India",
+    host: "",
+    duration: 5,
+    date: "Jul 16 - 21",
+    total: 673,
+    rating: 4.87,
+  },
+  {
+    image:
+      "https://a0.muscache.com/im/pictures/miso/Hosting-3298227/original/db91b151-be3e-4a4c-8790-ed64c0ac7698.jpeg?im_w=720",
+    description: "Sacred Valley, Peru",
+    host: "",
+    duration: 5,
+    date: "Aug 8 - 13",
+    total: 986,
+    rating: 4.99,
+  },
+  {
+    image:
+      "https://a0.muscache.com/im/pictures/monet/Luxury-690431182649594094/original/606157a6-ef10-4eb7-b7f4-33ac86f83823?im_w=720",
+    description: "Breckenridge, Colorado, US",
+    host: "",
+    duration: 5,
+    date: "Jun 05 - 20",
+    total: 2413,
+    rating: 5.0,
+  },
+  {
+    image:
+      "https://a0.muscache.com/im/pictures/c86830dd-415a-426f-8b3d-8c0fce5402fd.jpg?im_w=720",
+    description: "Calca, Peru",
+    host: "",
+    duration: 5,
+    date: "Jul 15 - 20",
+    total: 198,
+    rating: 4.96,
+  },
+  {
+    image:
+      "https://a0.muscache.com/im/pictures/4ac06cba-7b1d-4d8c-b124-1d956726c797.jpg?im_w=720",
+    description: "Aquitania, Colombia",
+    host: "",
+    duration: 5,
+    date: "Jul 15 - 20",
+    total: 306,
+    rating: 4.88,
+  },
+  {
+    image:
+      "https://a0.muscache.com/im/pictures/bbe939d6-8991-4f7b-9d5d-52b4fdd8a583.jpg?im_w=720",
+    description: "Fairplay, Colorado, US",
+    host: "",
+    duration: 7,
+    date: "Jul 13 - 20",
+    total: 2345,
+    rating: 4.88,
+  },
 ];
+
+//FiHeart
 
 function Card() {
   return (
-    <div>
-      <div>
-        <Image src={} alt="card" width={8} height={8} />
-        <div>OV</div>
-        <Swiper>
-
-        </Swiper>
-      </div>
-      <div>
-        <h3>Marrakech, Morocco</h3>
-        <p>Hosted by Julien Et Françoise </p>
-        <div>
-          <p>7 nights</p>
-          <span>.</span>
-          <p>Nov 5 - 12</p>
+    <div className="grid grid-cols-4 gap-6 mt-6 text-sm">
+      {cardDetails.map((card, i) => (
+        <div key={i} className="">
+          <div  className="relative">
+          <Image
+            src={card?.image}
+            className="rounded-xl h-72 w-80"
+            alt="apartment image"
+            height={400}
+            width={400}
+          />
+          <FiHeart className="text-white absolute z-10 top-6 right-4 h-5 w-5 "/>
+          </div>
+          
+          <div className="flex flex-col gap-1 mt-2">
+          <h2 className="font-medium">{card?.description}</h2>
+          <p className="text-gray-500">{"Host by " + card?.host}</p>
+          <div className="flex gap-1">
+            <p className="text-gray-500">{card?.duration + "  nights"}</p>
+            <span className="text-gray-500">.</span>
+            <span className="text-gray-500">{card?.date}</span>
+          </div>
+          <p className="underline ">{'$' + card?.total + " before taxes"}</p>
+          </div>
         </div>
-        <p>$708 total before taxes</p>
-        <div>
-          <span>star</span>
-          <p>4.88</p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
