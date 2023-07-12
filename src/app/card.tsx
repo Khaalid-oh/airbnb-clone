@@ -1,14 +1,11 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper";
-import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
-import { FiHeart } from "react-icons/fi";
-
+//import { FiHeart } from "react-icons/fi";
+import Heart from "./heart"
 
 const cardDetails = [
   {
@@ -216,30 +213,39 @@ const cardDetails = [
 //FiHeart
 
 function Card() {
+    const [clickedIndex, setClickedIndex] = useState(null);
+
+    const handleClick = (index) => {
+      setClickedIndex(index);
+    };
   return (
     <div className="grid grid-cols-4 gap-6 mt-6 text-sm">
       {cardDetails.map((card, i) => (
         <div key={i} className="">
-          <div  className="relative">
-          <Image
-            src={card?.image}
-            className="rounded-xl h-72 w-80"
-            alt="apartment image"
-            height={400}
-            width={400}
-          />
-          <FiHeart className="text-white absolute z-10 top-6 right-4 h-5 w-5 "/>
+          <div className="relative">
+            <Image
+              src={card?.image}
+              className="rounded-xl h-72 w-80"
+              alt="apartment image"
+              height={400}
+              width={400}
+            />
+            <Heart
+              className={`text-white absolute z-10 top-6 right-4 h-5 w-5 ${
+                clickedIndex === i ? "fill-red-500" : ""}`}
+                onClick={() => handleClick(i)}
+            />
           </div>
-          
+
           <div className="flex flex-col gap-1 mt-2">
-          <h2 className="font-medium">{card?.description}</h2>
-          <p className="text-gray-500">{"Host by " + card?.host}</p>
-          <div className="flex gap-1">
-            <p className="text-gray-500">{card?.duration + "  nights"}</p>
-            <span className="text-gray-500">.</span>
-            <span className="text-gray-500">{card?.date}</span>
-          </div>
-          <p className="underline ">{'$' + card?.total + " before taxes"}</p>
+            <h2 className="font-medium">{card?.description}</h2>
+            <p className="text-gray-500">{"Host by " + card?.host}</p>
+            <div className="flex gap-1">
+              <p className="text-gray-500">{card?.duration + "  nights"}</p>
+              <span className="text-gray-500">.</span>
+              <span className="text-gray-500">{card?.date}</span>
+            </div>
+            <p className="underline ">{"$" + card?.total + " before taxes"}</p>
           </div>
         </div>
       ))}

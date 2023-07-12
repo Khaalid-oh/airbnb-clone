@@ -48,7 +48,7 @@ function Navmenu() {
       </button>
       <Swiper
         spaceBetween={0}
-        slidesPerView={6}
+        slidesPerView={9}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
