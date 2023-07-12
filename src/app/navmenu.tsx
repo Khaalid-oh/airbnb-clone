@@ -48,7 +48,7 @@ function Navmenu() {
       </button>
       <Swiper
         spaceBetween={0}
-        slidesPerView={11}
+        slidesPerView={6}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
@@ -80,7 +80,7 @@ function Navmenu() {
         onClick={() => swiperRef.current?.slideNext()}
         className="flex items-center justify-center w-7 h-7 rounded-full border-[1px] "
       >
-        <IoIosArrowForward />
+        <IoIosArrowForward className=""/>
       </button>
     </div>
   );

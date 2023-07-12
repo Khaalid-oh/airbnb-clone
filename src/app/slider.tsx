@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 function Slider() {
   return (
     <Swiper
-      spaceBetween={10}
+      spaceBetween={6}
       slidesPerView={5}
       navigation={true}
       modules={[Navigation]}
