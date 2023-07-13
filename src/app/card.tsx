@@ -4,7 +4,8 @@ import React, { useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
-//import { FiHeart } from "react-icons/fi";
+import { AiFillStar } from "react-icons/ai";
+
 import Heart from "./heart"
 
 const cardDetails = [
@@ -26,7 +27,7 @@ const cardDetails = [
     duration: 5,
     date: "Jul 11 - 16",
     total: 689,
-    rating: 5.0,
+    rating: (5.0).toFixed(1),
   },
   {
     image:
@@ -96,7 +97,7 @@ const cardDetails = [
     duration: 5,
     date: "Sep 27 - Oct 2",
     total: 363,
-    rating: 5.0,
+    rating: (5.0).toFixed(1),
   },
   {
     image:
@@ -106,7 +107,7 @@ const cardDetails = [
     duration: 5,
     date: "Nov 5 - 12",
     total: 532,
-    rating: 5.0,
+    rating: (5.0).toFixed(1),
   },
   {
     image:
@@ -176,7 +177,7 @@ const cardDetails = [
     duration: 5,
     date: "Jun 05 - 20",
     total: 2413,
-    rating: 5.0,
+    rating: (5.0).toFixed(1),
   },
   {
     image:
@@ -208,6 +209,17 @@ const cardDetails = [
     total: 2345,
     rating: 4.88,
   },
+  {
+    image:
+      "https://a0.muscache.com/im/pictures/bbe939d6-8991-4f7b-9d5d-52b4fdd8a583.jpg?im_w=720",
+    description: "Fairplay, Colorado, US",
+    host: "",
+    duration: 7,
+    date: "Jul 13 - 20",
+    total: 2345,
+    rating: 4.88,
+  },
+  
 ];
 
 //FiHeart
@@ -219,7 +231,7 @@ function Card() {
       setClickedIndex(index);
     };
   return (
-    <div className="grid grid-cols-4 gap-6 mt-6 text-sm">
+    <div className="grid grid-cols-4 gap-6 mt-6 text-sm mb-16">
       {cardDetails.map((card, i) => (
         <div key={i} className="">
           <div className="relative">
@@ -232,20 +244,31 @@ function Card() {
             />
             <Heart
               className={`text-white absolute z-10 top-6 right-4 h-5 w-5 ${
-                clickedIndex === i ? "fill-red-500" : ""}`}
-                onClick={() => handleClick(i)}
+                clickedIndex === i ? "fill-red-500" : ""
+              }`}
+              onClick={() => handleClick(i)}
             />
           </div>
 
-          <div className="flex flex-col gap-1 mt-2">
-            <h2 className="font-medium">{card?.description}</h2>
-            <p className="text-gray-500">{"Host by " + card?.host}</p>
-            <div className="flex gap-1">
-              <p className="text-gray-500">{card?.duration + "  nights"}</p>
-              <span className="text-gray-500">.</span>
-              <span className="text-gray-500">{card?.date}</span>
+          <div className="flex justify-between">
+            <div className="flex flex-col gap-1 mt-2">
+              <h2 className="font-medium">{card?.description}</h2>
+              <p className="text-gray-500">{"Host by " + card?.host}</p>
+              <div className="flex gap-1">
+                <p className="text-gray-500">{card?.duration + "  nights"}</p>
+                <span className="text-gray-500">.</span>
+                <span className="text-gray-500">{card?.date}</span>
+              </div>
+              <p className="underline ">
+                {"$" + card?.total + " before taxes"}
+              </p>
             </div>
-            <p className="underline ">{"$" + card?.total + " before taxes"}</p>
+            <div className="flex items-start mt-2">
+              <div className="flex items-center gap-1">
+                <AiFillStar />
+                <p>{card?.rating}</p>
+              </div>
+            </div>
           </div>
         </div>
       ))}

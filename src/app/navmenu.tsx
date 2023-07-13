@@ -18,9 +18,24 @@ import Lakefront from "../../public/images/Lakefront.png";
 import Mansions from "../../public/images/Mansions.png";
 import Amazingg from "../../public/images/Amazing-pools.png";
 import Luxe from "../../public/images/Luxe.png";
+import Farms from "../../public/images/Farms.png"
+import National from "../../public/images/National-parks.png";
+import Treehouse from "../../public/images/Treehouse.png"
+import Boats from "../../public/images/Boats.png"
+import Camping from "../../public/images/Camping.png";
+import Offgrid from "../../public/images/Offgrid.png";
+import Piano from "../../public/images/Piano.png";
+import Tower from "../../public/images/Tower.png";
+import Tiny from "../../public/images/Tiny.png";
+import Domes from "../../public/images/Domes.png";
+import Yurts from "../../public/images/Yurts.png";
+import Vineyards from "../../public/images/Vineyards.png";
+import Play from "../../public/images/Play.png"
+
+
+
 import { IoIosArrowBack } from "react-icons/io"
 import { IoIosArrowForward } from "react-icons/io";
-//IoIosArrowForward
 
 const navMenu = [
   { icons: Amazing, title: "Amazing views" },
@@ -30,10 +45,23 @@ const navMenu = [
   { icons: Top, title: "Top of the world" },
   { icons: Containers, title: "Containers" },
   { icons: OMG, title: "OMG!" },
+  { icons: Luxe, title: "Luxe" },
   { icons: Lakefront, title: "Lakefront" },
   { icons: Mansions, title: "Masions" },
   { icons: Amazingg, title: "Amazing pools" },
-  { icons: Luxe, title: "Luxe" },
+  { icons: Farms, title: "Farms" },
+  { icons: National, title: "National parks" },
+  { icons: Treehouse, title: "Treehouse" },
+  { icons: Boats, title: "Boats" },
+  { icons: Camping, title: "Camping" },
+  { icons: Offgrid, title: "Offgrid" },
+  { icons: Piano, title: "Piano" },
+  { icons: Domes, title: "Domes" },
+  { icons: Tiny, title: "Tiny homes" },
+  { icons: Yurts, title: "Yurts" },
+  { icons: Play, title: "Play" },
+  { icons: Vineyards, title: "Vineyards" },
+  { icons: Tower, title: "Tower" },
 ];
 
 function Navmenu() {
@@ -48,7 +76,7 @@ function Navmenu() {
       </button>
       <Swiper
         spaceBetween={0}
-        slidesPerView={9}
+        slidesPerView={13}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
