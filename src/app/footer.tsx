@@ -2,8 +2,8 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-white border-t-[0.1px] border-gray-300 text-xs p-4 px-16 flex justify-between z-20">
-      <div className="flex gap-1">
+    <div className="md:fixed bottom-0 left-0 w-full bg-white border-t-[0.1px] border-gray-300 text-xs p-4 md:px-16 px-8 flex justify-between z-20 gap-20 md:gap-0">
+      <div className="flex flex-col md:flex-row gap-1">
         <p>&copy; Airbnb, Inc.</p>
         <p>Terms</p>
         <span>.</span>
@@ -15,7 +15,7 @@ function Footer() {
         <div></div>
       </div>
 
-      <div className="flex gap-3">
+      <div className="md:flex gap-3">
         <span>
           {" "}
           <p>English (US)</p>

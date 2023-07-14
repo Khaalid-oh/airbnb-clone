@@ -76,12 +76,30 @@ function Navmenu() {
       </button>
       <Swiper
         spaceBetween={0}
-        slidesPerView={13}
+        slidesPerView={4}
+        breakpoints={{
+          350: {
+            slidesPerView: 4,
+          },
+          480: {
+            slidesPerView: 5,
+          },
+          768: {
+            slidesPerView: 7,
+          },
+          902: {
+            slidesPerView: 9,
+          },
+
+          1040: {
+            slidesPerView: 12,
+          },
+        }}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
         modules={[Navigation]}
-        className="flex items-center justify-center mx-auto w-full"
+        className="flex items-center justify-center mx-auto w-full sm:flex-wrap"
       >
         {navMenu.map((apartment, i) => (
           <SwiperSlide key={i} className="flex items-center justify-center">
@@ -101,7 +119,7 @@ function Navmenu() {
         onClick={() => swiperRef.current?.slideNext()}
         className="flex items-center justify-center w-7 h-7 rounded-full border-[1px] "
       >
-        <IoIosArrowForward className=""/>
+        <IoIosArrowForward className="" />
       </button>
     </div>
   );

@@ -231,7 +231,7 @@ function Card() {
       setClickedIndex(index);
     };
   return (
-    <div className="grid grid-cols-4 gap-6 mt-6 text-sm mb-16">
+    <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 text-sm md:mb-16 mb-8">
       {cardDetails.map((card, i) => (
         <div key={i} className="">
           <div className="relative">

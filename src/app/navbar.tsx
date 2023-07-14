@@ -5,10 +5,11 @@ import { FiSearch } from "react-icons/fi";
 import { FiGlobe } from "react-icons/fi";
 import { FiMenu } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
+import { TbAdjustmentsHorizontal } from "react-icons/tb";
 function Navbar() {
   return (
-    <div className="flex items-center lg:px-12 md:p-4 px-2 py-4 border-b-[0.2px] border-gray-200 w-full">
-      <div className="flex items-center justify-between w-full">
+    <div className="flex items-center lg:px-12 md:p-4 px-2 py-4 border-b-[0.2px] border-gray-200 w-full text-sm">
+      <div className="hidden md:flex items-center justify-between w-full md:block ">
         <div className="flex items-center justify-center gap-2">
           <Image src={logo} alt="logo" className="w-8 h-8" />
           <p className="text-xl text-[#FF385C] font-extrabold">airbnb</p>
@@ -37,17 +38,22 @@ function Navbar() {
         </div>
       </div>
 
-      <div>
-        <div className="flex items-center justify-center w-[90%] h-24 rounded-full">
-        <FiSearch/> 
-        <div>
-          <p>Anywhere</p>
+      <div className="md:hidden flex items-center justify-between px-3 w-full h-16 rounded-full border-gray-400 border-[0.1px]">
+        <div className="flex items-center gap-2 ">
           <div>
-            <p>Any weel</p>
-            <span>.</span>
-            <p>Add guests</p>
+            <FiSearch />
+          </div>
+          <div className="flex flex-col ">
+            <p>Anywhere</p>
+            <div className="flex text-xs text-gray-500 gap-1">
+              <p>Any week</p>
+              <span>•</span>
+              <p>Add guests</p>
+            </div>
           </div>
         </div>
+        <div className="border-gray-900 border-2 rounded-full p-2">
+          <TbAdjustmentsHorizontal className="w-6 h-6" />
         </div>
       </div>
     </div>

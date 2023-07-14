@@ -1,19 +1,16 @@
 import React from 'react'
 import { BiCheck } from "react-icons/bi";
+import Toggle from './toggle';
 
 function Total() {
   return (
-    <div  className='flex h-16 w-[45%] border-[1px] border-gray-300 rounded-lg items-center justify-between py-4 px-4 text-sm'>
-      <div className='flex items-center gap-2'>
+    <div  className='flex h-16 w-[350px] md:w-[650px] border-[1px] border-gray-300 rounded-lg items-center justify-between py-4 px-4 text-sm'>
+      <div className='flex flex-col md:flex-row md:items-center md:gap-2'>
       <p>Display total price</p>
-      <span className='h-6 w-[1px] bg-gray-300'></span>
+      <span className='hidden md:block h-6 w-[1px] bg-gray-300'></span>
       <p className='text-gray-500 opacity-80'>Includes all fees, before taxes</p>
       </div>
-      <div className='flex bg-black h-8 w-12 rounded-full items-center justify-end pr-1 ml-16'>
-        <div className='flex items-center justify-center h-6 w-6 rounded-full bg-white'>
-          <BiCheck className='w-5 h-5'/>
-        </div>
-      </div>
+      <Toggle/>
     </div>
   )
 }
