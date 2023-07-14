@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import logo from '../../public/images/ABNB.svg'
+import logo from "../../public/images/ABNB.svg";
 import { FiSearch } from "react-icons/fi";
 import { FiGlobe } from "react-icons/fi";
 import { FiMenu } from "react-icons/fi";
@@ -9,7 +9,7 @@ import { TbAdjustmentsHorizontal } from "react-icons/tb";
 function Navbar() {
   return (
     <div className="flex items-center lg:px-12 md:p-4 px-2 py-4 border-b-[0.2px] border-gray-200 w-full text-sm">
-      <div className="hidden md:flex items-center justify-between w-full md:block ">
+      <div className="hidden md:flex items-center justify-between w-full">
         <div className="flex items-center justify-center gap-2">
           <Image src={logo} alt="logo" className="w-8 h-8" />
           <p className="text-xl text-[#FF385C] font-extrabold">airbnb</p>

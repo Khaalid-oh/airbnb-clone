@@ -225,9 +225,9 @@ const cardDetails = [
 //FiHeart
 
 function Card() {
-    const [clickedIndex, setClickedIndex] = useState(null);
+    const [clickedIndex, setClickedIndex] = useState <number | null>(null);
 
-    const handleClick = (index) => {
+    const handleClick = (index: number) => {
       setClickedIndex(index);
     };
   return (
