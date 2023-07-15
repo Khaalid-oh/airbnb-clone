@@ -225,11 +225,15 @@ const cardDetails = [
 //FiHeart
 
 function Card() {
-    const [clickedIndex, setClickedIndex] = useState <number | null>(null);
+  const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
-    const handleClick = (index: number) => {
+  const handleClick = (index: number) => {
+    if (clickedIndex === index) {
+      setClickedIndex(null);
+    } else {
       setClickedIndex(index);
-    };
+    }
+  };
   return (
     <div className="grid  md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 text-sm md:mb-16 mb-8">
       {cardDetails.map((card, i) => (
