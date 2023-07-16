@@ -14,7 +14,8 @@ module.exports = {
         hostname: "a0.muscache.com",
         port: "",
         pathname: "/**",
-      }
+      },
     ],
   },
+  distDir: "build",
 };
