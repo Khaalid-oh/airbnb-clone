@@ -18,10 +18,10 @@ import Lakefront from "../../public/images/Lakefront.png";
 import Mansions from "../../public/images/Mansions.png";
 import Amazingg from "../../public/images/Amazing-pools.png";
 import Luxe from "../../public/images/Luxe.png";
-import Farms from "../../public/images/Farms.png"
+import Farms from "../../public/images/Farms.png";
 import National from "../../public/images/National-parks.png";
-import Treehouse from "../../public/images/Treehouse.png"
-import Boats from "../../public/images/Boats.png"
+import Treehouse from "../../public/images/Treehouse.png";
+import Boats from "../../public/images/Boats.png";
 import Camping from "../../public/images/Camping.png";
 import Offgrid from "../../public/images/Offgrid.png";
 import Piano from "../../public/images/Piano.png";
@@ -30,11 +30,9 @@ import Tiny from "../../public/images/Tiny.png";
 import Domes from "../../public/images/Domes.png";
 import Yurts from "../../public/images/Yurts.png";
 import Vineyards from "../../public/images/Vineyards.png";
-import Play from "../../public/images/Play.png"
+import Play from "../../public/images/Play.png";
 
-
-
-import { IoIosArrowBack } from "react-icons/io"
+import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
 const navMenu = [
@@ -65,7 +63,20 @@ const navMenu = [
 ];
 
 function Navmenu() {
+  const [activeCategory, setActiveCategory] = useState(0);
+  const [isHover, setIsHover] = useState<null | number>(null);
   const swiperRef = useRef<SwiperType>();
+
+  const handleCategoryChange = (val: number) => {
+    setActiveCategory(val);
+  };
+  const handleCategoryHover = (val: number) => {
+    setIsHover(val);
+  };
+
+  const removeCategoryHover = () => {
+    setIsHover(null);
+  };
   return (
     <div className="flex items-center justify-center w-full p-4">
       <button
@@ -102,14 +113,38 @@ function Navmenu() {
         className="flex items-center justify-center mx-auto w-full sm:flex-wrap"
       >
         {navMenu.map((apartment, i) => (
-          <SwiperSlide key={i} className="flex items-center justify-center">
-            <div className="flex flex-col w-24 justify-center items-center">
+          <SwiperSlide
+            key={i}
+            className="flex items-center justify-center cursor-pointer relative pb-4"
+            onMouseEnter={() => handleCategoryHover(i)}
+            onMouseLeave={removeCategoryHover}
+            onClick={() => handleCategoryChange(i)}
+          >
+            <div
+              className={`flex flex-col min-w-max justify-center items-center ${
+                activeCategory === i || isHover === i
+                  ? "before:absolute before:[content:''] before:w-full before:h-[0.065rem] before:left-0 before:bottom-0 before:bg-red-700"
+                  : ""
+              } `}
+            >
               <Image
                 src={apartment?.icons}
                 alt="apartment"
                 className="flex h-6 w-6 items-center justify-center my-2"
               />
-              <p className="text-xs text-black">{apartment.title}</p>
+              <p
+                className={`text-xs
+                ${
+                  activeCategory === i || isHover === i
+                    ? "text-black"
+                    : "text-gray-400"
+                }
+
+                
+                `}
+              >
+                {apartment.title}
+              </p>
             </div>
           </SwiperSlide>
         ))}

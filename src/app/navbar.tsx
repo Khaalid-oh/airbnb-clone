@@ -6,6 +6,7 @@ import { FiGlobe } from "react-icons/fi";
 import { FiMenu } from "react-icons/fi";
 import { FaUser } from "react-icons/fa";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
+
 function Navbar() {
   return (
     <div className="flex items-center lg:px-12 md:p-4 px-2 py-4 border-b-[0.2px] border-gray-200 w-full text-sm">
