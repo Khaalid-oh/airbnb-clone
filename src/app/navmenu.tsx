@@ -115,17 +115,13 @@ function Navmenu() {
         {navMenu.map((apartment, i) => (
           <SwiperSlide
             key={i}
-            className="flex items-center justify-center cursor-pointer relative pb-4"
+            className="flex items-center justify-center cursor-pointer relative "
             onMouseEnter={() => handleCategoryHover(i)}
             onMouseLeave={removeCategoryHover}
             onClick={() => handleCategoryChange(i)}
           >
             <div
-              className={`flex flex-col min-w-max justify-center items-center ${
-                activeCategory === i || isHover === i
-                  ? "before:absolute before:[content:''] before:w-full before:h-[0.065rem] before:left-0 before:bottom-0 before:bg-red-700"
-                  : ""
-              } `}
+              className={`flex flex-col min-w-max justify-center items-center`}
             >
               <Image
                 src={apartment?.icons}
@@ -133,11 +129,19 @@ function Navmenu() {
                 className="flex h-6 w-6 items-center justify-center my-2"
               />
               <p
-                className={`text-xs
+                className={`text-xs pb-4 relative
                 ${
                   activeCategory === i || isHover === i
                     ? "text-black"
                     : "text-gray-400"
+                }
+
+                ${
+                  activeCategory === i
+                    ? "before:absolute before:[content:''] before:w-full before:h-[0.065rem] before:left-0 before:bottom-0 before:bg-black"
+                    : isHover === i
+                    ? "before:absolute before:[content:''] before:w-full before:h-[0.065rem] before:left-0 before:bottom-0 before:bg-gray-400"
+                    : ""
                 }
 
                 
