@@ -57,7 +57,7 @@ const cardDetails = [
     duration: 7,
     date: "Nov 30 - Dec 7",
     total: 442,
-    rating: 4.96,
+    rating: 4.92,
   },
   {
     image:
